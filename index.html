@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanish Bilish Bank</title>
+    <link rel="icon" href="images/Favicon.png">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <!-- Блок header -->
+        <div class="container">
+            <nav class="header__nav">
+                <!-- Вложенный блок header'a  - независимый блок-->
+                <!-- Элемент блока header__nav. зависимый блок header'a двойное подчеркивание показывает зависимость от какого либо блока-->
+
+                <a href="#!" class="header__nav-logo">
+                    <img src="images/Header_logo.png" alt="logo">
+                    <span class="header__nav-span">
+                        <span>Tanish- <span class="light-text">Bilish</span></span>
+                        <!-- в данном случае 2 слова на одной строке имеют разную жирность. 
+                        поэтому внутри одного тега span (где расположено первое слово) помещаем еще один тег span (внутри него 2 слово) добавив этому тегу модификатор (второй класс - light-text) -->
+                        <!-- <span>Tanish- span.light-text - (enter)</span> -->
+                        <span>BANK</span>
+                    </span>
+                </a>
+
+                <div class="header__nav-menu">
+                    <!-- создали div т.к. помимо самого меню есть еще кнопка заявки, все в одном div'e чтобы премещать в режиме flex -->
+                    <ul class="header__nav-list">
+                        <!-- элемент nav-list относится к блоку header__nav и за пределами этого блока его свойства не распространяeтся -->
+                        <li><a href="#!" class="header__nav-link">Кредиты</a></li>
+                        <li><a href="#!" class="header__nav-link">Карты</a></li>
+                        <li><a href="#!" class="header__nav-link">Вклады</a></li>
+                        <li><a href="#!" class="header__nav-link">Обмен валют</a></li>
+                    </ul>
+                    <a href="" class="header__nav-btn white-btn">Консультация</a>
+                    <!-- используя модификатор (white-btn) сразу задаем свойства всем кнопкам. таким образом кнопки могут иметь разные блоки и классы, но один модификатор, что делает их обладателями одного стиля -->
+                    <!-- header__nav - блок -->
+                    <!-- btn - элемент блока header__nav -->
+                    <!-- white-btn - дополнительный клас - модификатор - описывает внешний вид или поведение элемента на странице-->
+                </div>
+            </nav>
+        </div>
+        <div class="header__content">
+            <img src="images/header_balls.png" alt="balls" class="header__content-bg">
+            <div class="container">
+                <div class="header__content-info">
+                    <!-- создали еще один div, т.к. у элементов ниже должен быть "родитель", чтобы включить режим flex, container'у задавать эти свойства нельзя, поэтому создали еще один div -->
+                    <h1 class="header__content-title">Знакомых много не бывает!</h1>
+                    <img src="images/header_hands.png" alt="hands" class="header__content-image">
+                </div>
+
+                <div class="header__content-links">
+                    <!-- a.header__content-link*2>img -->
+                    <a href="" class="header__content-link"><img src="images/Google_Play.png" alt="Google_Play"></a>
+                    <a href="" class="header__content-link"><img src="images/App_Store.png" alt="App_Store"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="main__course">
+                <!-- имя всего блока -->
+                <div class="main__course-left">
+                    <!-- левый блок с глобусом -->
+                    <img src="images/main_planet.png" alt="planet">
+                </div>
+                <div class="main__course-right">
+                    <!-- правый общий блок с курсом валют -->
+                    <h2 class="main__title">Курс валют</h2>
+                    <!-- стилевые свойства всех заголовков одинаковы -->
+                    <div class="main__course-items">
+                        <!-- блоки с курсом валюты -->
+
+                        <div class="main__course-item">
+                            <!-- блок с кусом валюты -->
+                            <img src="images/Icon_dollar.png" alt="dollar" class="main__course-icon">
+                            <div class="main__course-info">
+                                <!-- блок с цифрами -->
+                                <span class="main__course-count">1</span>
+                                <span class="main__course-line"></span>
+                                <!-- черточки = (псевдоэлементы)/ тег span остается пустым, сами черточки будут нарисованы в CSS-->
+                                <span class="main__course-price">
+                                    10 950
+                                    <span class="main__course-sum">сум</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="main__course-item">
+                            <!-- блок с кусом валюты -->
+                            <img src="images/Icon_euro.png" alt="dollar" class="main__course-icon">
+                            <div class="main__course-info">
+                                <!-- блок с цифрами -->
+                                <span class="main__course-count">1</span>
+                                <span class="main__course-line"></span>
+                                <!-- черточки = (псевдоэлементы)/ тег span остается пустым, сами черточки будут нарисованы в CSS-->
+                                <span class="main__course-price">
+                                    12 180
+                                    <span class="main__course-sum">сум</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="main__course-item">
+                            <!-- блок с кусом валюты -->
+                            <img src="images/Icon_ruble.png" alt="dollar" class="main__course-icon">
+                            <div class="main__course-info">
+                                <!-- блок с цифрами -->
+                                <span class="main__course-count">1</span>
+                                <span class="main__course-line"></span>
+                                <!-- черточки = (псевдоэлементы)/ тег span остается пустым, сами черточки будут нарисованы в CSS-->
+                                <span class="main__course-price">
+                                    149
+                                    <span class="main__course-sum">сум</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="main__course-item">
+                            <!-- блок с кусом валюты -->
+                            <img src="images/Icon_yuan.png" alt="dollar" class="main__course-icon">
+                            <div class="main__course-info">
+                                <!-- блок с цифрами -->
+                                <span class="main__course-count">1</span>
+                                <span class="main__course-line"></span>
+                                <!-- черточки = (псевдоэлементы)/ тег span остается пустым, сами черточки будут нарисованы в CSS-->
+                                <span class="main__course-price">
+                                    1 245
+                                    <span class="main__course-sum">сум</span>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="main__cards">
+                <div class="main__cards-left">
+                    <h2 class="main__title">Лучшая карта</h2>
+                    <h4 class="main__cards-subtitle">
+                        HopCard
+                        <span class="main__cards-visa">VISA</span>
+                    </h4>
+                    <p class="main__cards-info">
+                        Комиссия за выпуск:
+                        <span>0$</span>
+                        <!-- используем span вместо пробела (br) -->
+                    </p>
+                    <p class="main__cards-info">
+                        Комиссия за операции по карте:
+                        <span>0$</span>
+                    </p>
+                    <div class="main__cards-links">
+                        <a href="#!" class="main__cards-link white-btn">Заказать</a>
+                        <!-- при наличии новых блока main__cards-link в данном варианте используя модификатор (white-btn) сразу задаем свойства уже настроенной кнопки из header. таким образом кнопки могут иметь разные блоки и классы, но один модификатор, что делает их обладателями одного стиля -->
+                        <!--кнопка сверху - <a href="" class="header__nav-btn white-btn">Консультация</a> -->
+                        <a href="#!" class="main__cards-info">Подробнее</a>
+                        <!-- ссылка имеет тот же класс, что и заголовки выше -->
+                    </div>
+                </div>
+                <img src="images/main_card.png" alt="card" class="main__cards-img">
+            </div>
+        </div>
+        <section class="main__offer">
+            <!-- вместо  section можно использовать div и это не будет ошибкой и не приведет к торможению сайта  тд. div появился позже section и div является универсальным контейнером, section может использоваться только там, где есть картинка заголовок и текст.-->
+            <div class="container">
+                <h2 class="main__title">
+                    Кредитные предложения
+                </h2>
+                <!-- заголовок с общим классом для всех заголовков -->
+                <div class="main__offer-content">
+                    <div class="main__offer-left">
+                        <div class="main__offer-info">
+                            <h3 class="main__offer-title">Бизнес-старт</h3>
+                            <p class="main__offer-description">Получите кредит до 50 000 000 сум для начала вашего
+                                бизнеса</p>
+                            <p class="main__offer-text">Срок: до 3х лет</p>
+                            <a href="" class="main__offer-link white-btn">Получить</a>
+
+                        </div>
+                        <img src="images/main_rocket.png" alt="rocket" class="main__offer-img">
+                    </div>
+
+                    <div class="main__offer-right">
+                        <div class="main__offer-info">
+                            <h3 class="main__offer-title">Обучение</h3>
+                            <p class="main__offer-description">Выплаты на обучения до 15 000 000 сум в учебных центрах
+                            </p>
+                            <p class="main__offer-text">Срок: до 1 года</p>
+                            <a href="" class="main__offer-link white-btn">Получить</a>
+
+                        </div>
+                        <img src="images/main_schoolboy.png" alt="schoolboy" class="main__offer-img">
+                    </div>
+                </div>
+                <a href="" class="main__offer-all white-btn">Все</a>
+            </div>
+        </section>
+
+        <section class="main__services">
+            <div class="container">
+                <h2 class="main__title">Мобильное приложение</h2>
+                <div class="main__services-content">
+
+                    <div class="main__services-left">
+                        <h2 class="main__title">Оплата онлайн ресурсов</h2>
+                        <img src="images/main_gamer.png" alt="gamer">
+                    </div>
+
+
+                    <div class="main__services-right">
+                        <div class="main__services-items">
+                            <h2 class="main__title">Выплаты по расписанию</h2>
+                            <img src="images/main_calendar.png" alt="calendar">
+                        </div>
+
+                        <div class="main__services-items">
+                            <img src="images/main_boy.png" alt="boy">
+                            <h2 class="main__title">Удобно в любом месте</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="main__services-links">
+                    <a href="#!" class="main__services-link"><img src="images/Google_Play.png" alt="Google_Play"></a>
+                    <a href="#!" class="main__services-link"><img src="images/App_Store.png" alt="App_Store"></a>
+                    <!-- a.main__services-link*2>img - скоропись -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <a href="" class="footer__logo">
+            <img src="images/Footer_logo.png" alt="footer-logo">
+            <span class="footer__logo-span">
+                <span class="footer__logo-top">
+                    <span>Tanish-</span>
+                    <span>Bilish</span>
+                </span>
+                <span class="footer__logo-bottom">Bank</span>
+            </span>
+        </a>
+        <h4 class="footer-text">Знакомых много не бывает!</h4>
+    </footer>
+</body>
+<!-- 
+                            <div class="main__title"> </div>
+                            <div class="main__title"> </div>
+                            <div class="main__title"> </div>
+                            <div class="main__title"> </div> 
+                        одновременное раскрытие скобок у вех элементов - нажимаем курсором на нужное место, зажимаем alt и нажимает на строки ниже-->
+
+</html>

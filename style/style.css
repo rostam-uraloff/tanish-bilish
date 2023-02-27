@@ -1,0 +1,618 @@
+@import url('fonts.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1345px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Montserrat';
+    background: #eff5f5;
+
+}
+
+/* HEADER START */
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.header__nav-logo {
+    /* задаем свойства тегу а */
+    display: flex;
+    align-items: center;
+}
+
+.header__nav-span {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+.header__nav-span span:nth-of-type(1).light-text {
+    /* обращение ко второму слову на одной строке - Bilish */
+    font-weight: 300;
+}
+
+
+.header__nav-span span:nth-of-type(1) {
+    /* обращение к тегу span внутри блока header__nav-span. сначала указываем название блока, после имя тега (например - span), после :nth-of-type(1) */
+    /* Tanish- */
+    color: #B49081;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+}
+
+.header__nav-span span:nth-of-type(2) {
+    /* BANK */
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.75em;
+    /* letter-spacing - межбуквенный интервал - расстояние между буквами в одном слове */
+    /* 1 em - 16px */
+    color: #563529;
+}
+
+
+.header__nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.header__nav-list {
+    display: flex;
+    column-gap: 25px;
+    margin-right: 40px;
+}
+
+.header__nav-link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #626262;
+}
+
+.white-btn {
+    /* обращение к кнопке заявки */
+    display: inline-block;
+    /* тег а (ссылка - строчный элемент, для того чтобы работали paddinh'и нужно задать режим  display: inline-block; - сделать строчно-блочным/ можно было сделать display:block , но т.к. тут нет автоматический отступов можно просто inline-block*/
+    background: #FFFFFF;
+    box-shadow: 0px 13px 20px -15px rgba(0, 71, 184, 0.49);
+    /* теньимеет 5 значений: box-shadow: 3px 13px 20px -15px rgba(0, 71, 184, 0.49); */
+    /* 1 значение - (3px) - горизонтальное движение тени вправо/влево */
+    /* 2 значение - (13px) - вертикальное движение тени вверх/вниз */
+    /* 3 значение - (20px) - размытие тени  */
+    /* 4 значение - (-15px) - распространение размытия */
+    /* 5 значение - (rgba(0, 71, 184, 0.49) - цвет тени */
+    border-radius: 6px;
+    padding: 9px 39px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #323232;
+}
+
+.header__content-bg {
+    position: absolute;
+    /* задавая это свойство какому-либо элементу, мы делаем его “невидимым” для элементов, которые находятся ниже, эти элементы “думают”, что его нет и занимают его место */
+    /* картинка ниже заняла место header__content-bg (за header__content-bg, исчезнув из виду, т.к. header__content-bg не прозрачна. ) */
+    z-index: -1;
+    /* определяет положение позиционированного элемента (например у нас есть background и за ним при помощи позиционирования мы разместили другую картинку, которую не видно из за background'а, при помощи z-index: -1 мы переместили background за картинкой, отдав приоритет картинке ) */
+}
+
+.header__content {
+    position: relative;
+    /* это свойство задается родителю элемента, свойство помещает элемент в “клетку” за которую дочерний элемент не может выйти, без этого свойства при включении режима position:absolute элемент прижимается к краю “полотна”, при включении режима relative он будет ограничен рамками родителя
+ */
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__content-info {
+    /*  заголовок и картинка  руками */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header__content-title {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 61px;
+    color: #323232;
+    max-width: 463px;
+    width: 100%;
+}
+
+.header__content-links {
+    /* googleplay appstore */
+    position: absolute;
+    /* благодаря этому свойству можем переместить блок с googleplay и appstore в самый низ блока header__content у которого высота 700px */
+    bottom: -55;
+    /* задали bottom 0.блок с googleplay и appstore перемещен в самый низ блока header__content */
+    /* задали bottom -50 - т.к. блок по макету расположен ниже 0. цифра взята с макета "на глаз" */
+    left: 50%;
+    /* влево на 50% - блок перемещен в центр c погрешностью вправо */
+    transform: translateX(-50%);
+    /* блок с googleplay и appstore передвинут влево по центру без погрешностей. */
+    /* translateX - X это горизонтальное положение, У - вертикальное. -50% - потому что left: 50%; */
+    max-width: 635px;
+    width: 100%;
+    /* ширина блока. такое сочетание max-width и width 100% работает правильно при адаптации на разные устройства */
+    /* элементы переместились влево внутри своего блока, так как мы задали ширину блока и появилось свободное пространство  */
+    display: flex;
+    justify-content: space-evenly;
+    /* поместили элементы по центру блока с отступами space-evenly */
+    padding: 25px 0;
+    /* отступы блока сверху и снизу. справа и слева по 90, но мы их не задали, т.к. ширину задали при помощи max-width: 635px; */
+
+    /* цветовые свойства блока */
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid #EAEAEA;
+    box-shadow: 0px 59px 30px -40px rgba(0, 133, 255, 0.1);
+    /* тень блока */
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    /* с помощью backdrop-filte можно задавать блоку различные эффекты, например размытие фона или смещение цвета фона и тд. blur - это размытие фона - эффект стекла*/
+}
+
+/* HEADER END */
+
+/* MAIN START */
+.main {
+    padding: 120px 0 100px;
+    /* отступ блока main сверху и снизу */
+}
+
+.main__course {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main__title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    color: #626262;
+}
+
+.main__course-item {
+    background: #FFFFFF;
+    box-shadow: 0px 30px 30px -15px rgba(0, 133, 255, 0.1);
+    border-radius: 13px;
+
+    display: flex;
+    align-items: center;
+    padding: 15px 32px 15px 15px;
+    /* отступы блока заданы всему блоку */
+    column-gap: 30px;
+    /* отступы между элементами блока */
+    max-width: 306px;
+    width: 100%;
+    /* ширина блоков с курсом */
+}
+
+
+.main__course-count {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #323232;
+}
+
+/* задаем высоту самим линиям (черточкам =) */
+.main__course-line {
+    width: 43px;
+    /* ширина черточки по макету */
+    height: 5px;
+    /* высота box'a линий (на глаз) */
+    display: flex;
+    position: relative;
+    /* чтобы линия не выходила за пределы блока */
+    margin: 0 12px 0 17px;
+    /* отступы от линий = справа и слева */
+}
+
+/* черточки (псевдоэлементы) действие 1 - псевдоэлемент - before/ действие 2 - псевдоэлемент affter */
+
+/* псевдоэлементы через двоеточия. псевдоклассы через 1 двоеточие */
+
+/* одиночным тегам нельзя задавать псевдоэлемент before/affter (input, img...) если нужно задать имbefore/affter, сначала нужно обернуть их в div и уже потом этому div'у задавать свойства before/affter  */
+
+.main__course-line::before {
+    content: '';
+    /* с помощью свойства content мы можем сгенерировать какое то значение: например: указать пусть к картинке - url(../) или прописать текст, который отобразится в на сайте */
+    /* в данном случае content оставим пустым */
+    display: block;
+    width: 100%;
+    height: 1px;
+    /* задаем значения width: 100%; height: 1px; для того, чтобы могли задать самому main__course-line фиксированную высоту и ширину и он примет 100 по высоте и ширине */
+    background: #626262;
+    position: absolute;
+    top: 0;
+    /* чтобы верхняя линия прижалась вверх */
+}
+
+.main__course-line::after {
+    /* линий стало 2, но вторую линию не видно, т.к. они стоят друг на друге, поэтому задаем after'y bottom: 0; a  before' y top: 0;. чтобы они прижались к верху и низу строки (height: 5px;)*/
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #626262;
+    position: absolute;
+    bottom: 0;
+    /* чтобы нижняя линия прижалась вниз */
+}
+
+.main__course-info {
+    display: flex;
+    align-items: center;
+}
+
+/* 
+    действия по этапу
+
+    .main__course-line::before
+         content: '';
+         display: block;
+         width: 100%;
+         height: 5px;
+    .main__course-line
+         width: 43px;
+         height: 1px;
+         display: flex;
+         background: #626262;
+         position: absolute;
+    .main__course-line {
+         position: relative;
+    .main__course-info
+         display: flex;
+         align-items: center;
+    .main__course-line
+         margin: 0 12px 0 17px;
+    дублируем блок .main__course-line::before - .main__course-line::after - получилась вторая линия знака "="
+    .main__course-line::before {
+         top: 0;
+    .main__course-line::after
+         bottom: 0;
+ */
+
+.main__course-price {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #323232;
+}
+
+.main__course-sum {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #323232;
+}
+
+.main__course-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    /* отступы на все стороны */
+    margin-top: 32px;
+    /* отступ блоков от */
+}
+
+.main__course-right {
+    /* блок с курсом валют */
+    width: 50%;
+    /* ограничили блок в ширине, тем самым переместив весь блок вправо, блок стал ровно */
+}
+
+.main__cards {
+    margin: 50px 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main__cards-subtitle {
+    margin: 12px 0 30px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    color: #626262;
+}
+
+.main__cards-visa {
+    font-weight: 700;
+    /* остальные стили элемент берет у своего родителя */
+}
+
+.main__cards-info {
+    margin-bottom: 20px;
+    /* межстрочный отступ межу строками с одним классом */
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #626262;
+
+}
+
+.main__cards-info>span {
+    /* отступ между заголовком и 0 (span) */
+    /* .main__cards-info>span - означает, что есть блок .main__cards-info и в нем есть элемент span (>span) */
+    margin-left: 30px;
+}
+
+.main__cards-link {
+    margin-right: 30px;
+}
+
+.main__offer .main__title {
+    /* заголовок main__title имеет общий класс с другими заголовками, чтобы обратиться только к данному заголовку, не изменяя параметры других заголовков, обращаемся к родителю этого заголовка - .main__offer далее пробел и черз точку к самому заголовку main__title */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main__offer-left {
+    background: #BDC4FF;
+    box-shadow: 0px 40px 30px -25px rgba(189, 196, 255, 0.5);
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 642px;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    /* влючили этот режим, чтобы ограничить в рамках бокса элемент "ХИТ" (.main__offer-left::before) */
+}
+
+.main__offer-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #626262;
+    margin-bottom: 20px;
+}
+
+.main__offer-description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #323232;
+    margin-bottom: 20px;
+    max-width: 472px;
+    width: 100%;
+}
+
+.main__offer-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #323232;
+    margin-bottom: 20px;
+}
+
+/* вместо margin bottom у каждого элемента с одинаковым отступом можно использовать свойство gap  для всех элементов одновременно.
+        обращаемся к родителю элементов 
+        main__offer-info
+        .main__offer-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px; row-gap т.к. включен flex-direction: column;
+    }
+*/
+.main__offer-left::before,
+.main__offer-right::before {
+    /* делаем маленькую плитку - ХИТ */
+    /* свойства дублируются для 2 блоков сразу main__offer-left и main__offer-right*/
+    content: 'ХИТ';
+    /* с помощью свойства content мы можем сгенерировать какое то значение: например: указать пусть к картинке - url(../) или прописать текст, который отобразится в на сайте */
+    /* в данном случае content оставим пустым */
+    display: inline-block;
+    position: absolute;
+    /* делает его "невидимым для других элементов" */
+    top: -10px;
+    /* переместил элемент на самый верх сайта, чтобы элемент "ХИТ" был в блоке включаем режим  position: relative; для родителся элемента "ХИТ" - main__offer-left. Теперь "ХИТ" ограничен в боксе*/
+    /* задали значение -10px приподняв выше блока */
+    padding: 3px 16px;
+    /* внутренние отступы - делаем "плиткой" */
+
+    background: rgba(255, 255, 255, 0.4);
+    border: 0.5px solid rgba(215, 215, 215, 0.3);
+    box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(7.5px);
+    border-radius: 4px;
+
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+}
+
+.main__offer-right {
+    /* дублированный блок */
+    background: #FFD280;
+    box-shadow: 0px 40px 30px -25px rgba(255, 210, 128, 0.4);
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 642px;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+}
+
+.main__offer-content {
+    /* родитель 2 блоков */
+    display: flex;
+    justify-content: space-between;
+}
+
+.main__offer-all {
+    max-width: 194px;
+    width: 100%;
+    display: block;
+    /* строный элемент margin auto  не работает */
+    margin: 30px auto 0 auto;
+    /* поместили по центру */
+    text-align: center;
+    /* текст внутри кнопки по центру */
+}
+
+.main__services {
+    margin-top: 50px;
+
+}
+
+.main__services .main__title {
+    text-align: center;
+}
+
+.main__services-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 32px;
+}
+
+.main__services-left {
+    background: #97EAB9;
+    box-shadow: 0px 40px 30px -25px rgba(151, 234, 185, 0.4);
+    border-radius: 10px;
+
+    max-width: 642px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 25px;
+    row-gap: 25px;
+    /* отступ от заголовка к картинке */
+}
+
+.main__services-items {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.main__services-items:first-child {
+    /* 2 блока имеют один размер и радиус. мы задали им свойства выше. теперь же делаем индивидуальные стилевые свойства обращаясь к каждому через first-child и last-child */
+    /* если блоков дублей больше 2, то используется псевдокласс nth-of-type() */
+    background: #FFC1BD;
+    box-shadow: 0px 25px 30px -20px rgba(255, 193, 189, 0.5);
+    padding: 49px 35px;
+    /* внутренние отступы - размер блока */
+    column-gap: 36px;
+    /* если блоку задан flex, то можно использовать gap */
+    margin-bottom: 42px;
+}
+
+.main__services-items:last-child {
+    background: #C1B7FF;
+    box-shadow: 0px 25px 30px -25px rgba(193, 183, 255, 0.4);
+    padding: 38px 64px;
+    column-gap: 65px;
+}
+
+.main__services-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.main__services-link {
+    background: #FFFFFF;
+    box-shadow: 0px 13px 20px -15px rgba(0, 71, 184, 0.49);
+    border-radius: 12px;
+    max-width: 360px;
+    width: 100%;
+    padding: 26px 0;
+    display: flex;
+    justify-content: center;
+}
+/* MAIN END */
+
+
+/* FOOTER START */
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 25px;
+}
+
+.footer__logo-top {
+    color: #B49081;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.footer__logo-top span:nth-last-of-type(1) {
+    font-weight: 300;
+}
+
+.footer__logo-top span:nth-last-of-type(2) {
+    font-weight: 500;
+}
+
+.footer__logo {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.footer__logo-bottom {
+    display: block;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.75em;
+    color: #563529;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.footer-text {
+    font-size: 20px;
+    line-height: 24px;
+    color: #626262;
+    font-weight: 700;
+}
+
+/* FOOTER END */
